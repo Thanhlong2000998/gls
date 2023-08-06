@@ -146,6 +146,8 @@ $tsm_2 = array(
 );
 $data = '{"ads_id":'.$ads_id.',"account_id":'.$account_id.',"async":true,"data":null}';
 $nhan_coin = post_type2($url_2, $tsm_2, $data);
+sleep(1);
+$nhan_coin = post_type2($url_2, $tsm_2, $data);
 
 if ($nhan_coin["success"]== 200 ){
 	$type_2 = $nhan_coin["data"]["type"];
