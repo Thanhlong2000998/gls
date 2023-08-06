@@ -157,11 +157,12 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
     echo "Hoàn thành lại\n";
     $nhan_coin = post_type2($url_2, $tsm_2, $data);
     if ($nhan_coin["success"]== 200 ){
-        $type_2 = $nhan_coin["data"]["type"];
-        $object_id = $nhan_coin["data"]["object_id"];
-        $gio = date("H:i");
-    $tt = $tt+1;
-    echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do."|\n";}
+	$type_2 = $nhan_coin["data"]["type"];
+	$object_id = $nhan_coin["data"]["object_id"];
+	$gio = date("H:i");
+$tt = $tt+1;
+echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do."|\n";
+}
     else{
         echo " NHẬN COIN THẤT BẠI \n";
             $url_3 = "https://sv5.golike.net/api/advertising/publishers/tiktok/skip-jobs";
