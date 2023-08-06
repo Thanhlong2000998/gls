@@ -146,8 +146,6 @@ $tsm_2 = array(
 );
 $data = '{"ads_id":'.$ads_id.',"account_id":'.$account_id.',"async":true,"data":null}';
 $nhan_coin = post_type2($url_2, $tsm_2, $data);
-sleep(1);
-$nhan_coin = post_type2($url_2, $tsm_2, $data);
 
 if ($nhan_coin["success"]== 200 ){
 	$type_2 = $nhan_coin["data"]["type"];
@@ -156,20 +154,29 @@ if ($nhan_coin["success"]== 200 ){
 $tt = $tt+1;
 echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do."|\n";
 }else{
-	echo " NHẬN COIN THẤT BẠI \n";
-		$url_3 = "https://sv5.golike.net/api/advertising/publishers/tiktok/skip-jobs";
-    	$tsm_3 = array(
-    	"Host:sv5.golike.net",
-    	"accept:application/json, text/plain, */*",
-    	"authorization:".$authorization,
-		"user-agent:Mozilla/5.0 (Linux; Android 8.1.0; CPH1912 Build/O11019) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.130 Mobile Safari/537.36",
-		"content-type:application/json;charset=utf-8",
-		"origin:https://app.golike.net",
-    	);
-    	$data_1 = '{"ads_id":'.$ads_id.',"object_id":"'.$object_id.'","account_id":'.$account_id.',"type":"'.$type.'"}';
-    	$skip = post_type2($url_3, $tsm_3, $data_1);
-    	$message = $skip["message"]; 
-    	echo $van." $message \n";
+    $nhan_coin = post_type2($url_2, $tsm_2, $data);
+    if ($nhan_coin["success"]== 200 ){
+        $type_2 = $nhan_coin["data"]["type"];
+        $object_id = $nhan_coin["data"]["object_id"];
+        $gio = date("H:i");
+    $tt = $tt+1;
+    echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do."|\n";
+    else{
+        echo " NHẬN COIN THẤT BẠI \n";
+            $url_3 = "https://sv5.golike.net/api/advertising/publishers/tiktok/skip-jobs";
+            $tsm_3 = array(
+            "Host:sv5.golike.net",
+            "accept:application/json, text/plain, */*",
+            "authorization:".$authorization,
+            "user-agent:Mozilla/5.0 (Linux; Android 8.1.0; CPH1912 Build/O11019) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5735.130 Mobile Safari/537.36",
+            "content-type:application/json;charset=utf-8",
+            "origin:https://app.golike.net",
+            );
+            $data_1 = '{"ads_id":'.$ads_id.',"object_id":"'.$object_id.'","account_id":'.$account_id.',"type":"'.$type.'"}';
+            $skip = post_type2($url_3, $tsm_3, $data_1);
+            $message = $skip["message"];
+            echo $van." $message \n";
+        }
 }
 
 
