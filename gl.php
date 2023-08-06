@@ -160,7 +160,7 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
         $object_id = $nhan_coin["data"]["object_id"];
         $gio = date("H:i");
     $tt = $tt+1;
-    echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do."|\n";
+    echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do."|\n";}
     else{
         echo " NHẬN COIN THẤT BẠI \n";
             $url_3 = "https://sv5.golike.net/api/advertising/publishers/tiktok/skip-jobs";
