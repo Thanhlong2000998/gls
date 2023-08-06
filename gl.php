@@ -154,6 +154,7 @@ if ($nhan_coin["success"]== 200 ){
 $tt = $tt+1;
 echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do."|\n";
 }else{
+    echo "Hoàn thành lại\n";
     $nhan_coin = post_type2($url_2, $tsm_2, $data);
     if ($nhan_coin["success"]== 200 ){
         $type_2 = $nhan_coin["data"]["type"];
