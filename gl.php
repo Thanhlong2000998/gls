@@ -170,7 +170,7 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
             $count -= 1;
         }
     }
-    if (&count == 0){
+    if ($count == 0){
         echo " NHẬN COIN THẤT BẠI \n";
             $url_3 = "https://sv5.golike.net/api/advertising/publishers/tiktok/skip-jobs";
             $tsm_3 = array(
