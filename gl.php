@@ -165,7 +165,7 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
             echo "The count is: " . $count . "\n";
             $count -= 1000;
             $tt = $tt+1;
-            echo "".$do." | ".$BBlue.$tt.$do." | ".$BBlue."SUCCESS ".$do."|\n";}
+            echo "".$do." | ".$BBlue.$tt.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do."|\n";}
         else{
             $count -= 1;
         }
