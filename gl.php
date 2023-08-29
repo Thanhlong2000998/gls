@@ -163,7 +163,7 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
             $object_id = $nhan_coin["data"]["object_id"];
             $gio = date("H:i");
             echo "The count is: " . $count . "\n";
-            $count += 100;
+            $count -= 1000;
             $tt = $tt+1;
             echo "".$BBlue.$tt.$do." | ".$BBlue."SUCCESS ".$do."|\n";}
         else{
