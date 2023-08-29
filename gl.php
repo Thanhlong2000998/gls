@@ -154,7 +154,7 @@ if ($nhan_coin["success"]== 200 ){
 $tt = $tt+1;
 echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do."|\n";
 }else{
-    $count = 5;
+    $count = 2;
     while ($count > 0)
     {
         $nhan_coin = post_type2($url_2, $tsm_2, $data);
