@@ -162,7 +162,6 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
             $type_2 = $nhan_coin["data"]["type"];
             $object_id = $nhan_coin["data"]["object_id"];
             $gio = date("H:i");
-            echo "The count is: " . $count . "\n";
             $count -= 1000;
             $tt = $tt+1;
             echo "".$do." | ".$BBlue.$tt.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do."|\n";}
