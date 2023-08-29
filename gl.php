@@ -154,17 +154,23 @@ if ($nhan_coin["success"]== 200 ){
 $tt = $tt+1;
 echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do."|\n";
 }else{
-    echo "Hoàn thành lại\n";
-    $nhan_coin = post_type2($url_2, $tsm_2, $data);
-    if ($nhan_coin["success"]== 200 ){
-	$type_2 = $nhan_coin["data"]["type"];
-	$object_id = $nhan_coin["data"]["object_id"];
-	$gio = date("H:i");
-$tt = $tt+1;
-echo "SUCCESS\n";
-// echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do."|\n";
-}
-    else{
+    $count = 10;
+    while ($count > 0)
+    {
+        $nhan_coin = post_type2($url_2, $tsm_2, $data);
+        if ($nhan_coin["success"]== 200 ){
+            $type_2 = $nhan_coin["data"]["type"];
+            $object_id = $nhan_coin["data"]["object_id"];
+            $gio = date("H:i");
+            echo "The count is: " . $count . "\n";
+            $count += 100;
+            $tt = $tt+1;
+            echo "".$BBlue.$tt.$do." | ".$BBlue."SUCCESS ".$do."|\n";}
+        else{
+            $count -= 1;
+        }
+    }
+    if (&count == 0){
         echo " NHẬN COIN THẤT BẠI \n";
             $url_3 = "https://sv5.golike.net/api/advertising/publishers/tiktok/skip-jobs";
             $tsm_3 = array(
@@ -180,6 +186,7 @@ echo "SUCCESS\n";
             $message = $skip["message"];
             echo $van." $message \n";
         }
+
 }
 
 
