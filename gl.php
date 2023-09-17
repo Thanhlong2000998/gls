@@ -118,7 +118,6 @@ if ($home_1["success"]== 200 ){
     	$skip = post_type2($url_3, $tsm_3, $data_1);
     	$message = $skip["message"];
     	echo $van." $message \r";
-    	$error_count = $error_count + 1;
     	continue;
     }
     
@@ -155,7 +154,7 @@ if ($nhan_coin["success"]== 200 ){
 	$object_id = $nhan_coin["data"]["object_id"];
 	$gio = date("H:i");
 $tt = $tt+1;
-echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do." | Error: ".$BBlue.$error_count.$do."\n";
+echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do."\n";
 }else{
     $count = intval($ct);
     while ($count > 0)
@@ -169,7 +168,7 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
             $gio = date("H:i");
             $count -= 1000;
             $tt = $tt+1;
-            echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do." | Error: ".$BBlue.$error_count.$do."\n";
+            echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do."\n";
         else{
             $count -= 1;
         }
@@ -188,7 +187,6 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
             $data_1 = '{"ads_id":'.$ads_id.',"object_id":"'.$object_id.'","account_id":'.$account_id.',"type":"'.$type.'"}';
             $skip = post_type2($url_3, $tsm_3, $data_1);
             $message = $skip["message"];
-            $error_count = $error_count + 1;
             echo $van." $message \r";
         }
 
