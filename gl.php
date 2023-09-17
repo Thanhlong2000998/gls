@@ -45,6 +45,7 @@ echo $van." NHẬP SỐ LẦN HOÀN THÀNH : ";
 $ct = trim(fgets(STDIN));
 echo $van." Nhập Delay : ";
 $dl = trim(fgets(STDIN));
+$error_count = 0
 
 $url = "https://sv5.golike.net/api/users/me";
 $tsm = array(
@@ -104,7 +105,7 @@ if ($home_1["success"]== 200 ){
         		@system('cmd /c start '.$link);
     		}
     }else{
-    	echo $van." TÌM NHIỆM VỤ : $type LỖI KHÔNG THỂ LÀM NV NÀY ĐƯỢC  \n";
+    	echo $van." TÌM NHIỆM VỤ : $type LỖI KHÔNG THỂ LÀM NV NÀY ĐƯỢC  \r";
     	$url_3 = "https://sv5.golike.net/api/advertising/publishers/tiktok/skip-jobs";
     	$tsm_3 = array(
     	"Host:sv5.golike.net",
@@ -118,16 +119,17 @@ if ($home_1["success"]== 200 ){
     	$skip = post_type2($url_3, $tsm_3, $data_1);
     	$message = $skip["message"];
     	echo $van." $message \r";
+    	$error_count = $error_count + 1
     	continue;
     }
     
 }else{
 	$message = $home_1["message"];
 	if ( $message == "Bấm load jobs lại để lấy 100 jobs mới,cảm ơn bạn !"){
-	echo $van." TÌM NHIỆM VỤ THẤT BẠI : $message \n";
+	echo $van." TÌM NHIỆM VỤ THẤT BẠI : $message \r";
 	continue;
 	}else{
-		echo $van." TÌM NHIỆM VỤ THẤT BẠI : $message \n";
+		echo $van." TÌM NHIỆM VỤ THẤT BẠI : $message \r";
         continue;
 	}
 }
@@ -148,31 +150,33 @@ $tsm_2 = array(
 );
 $data = '{"ads_id":'.$ads_id.',"account_id":'.$account_id.',"async":true,"data":null}';
 $nhan_coin = post_type2($url_2, $tsm_2, $data);
-
+echo "Lần hoàn thành thứ $count \r";
 if ($nhan_coin["success"]== 200 ){
 	$type_2 = $nhan_coin["data"]["type"];
 	$object_id = $nhan_coin["data"]["object_id"];
 	$gio = date("H:i");
 $tt = $tt+1;
-echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do." | ".$BBlue.$tt.$do."\n";
+echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do." | Error: ".$BBlue.$error_count.$do."\n";
 }else{
     $count = intval($ct);
     while ($count > 0)
     {
         $nhan_coin = post_type2($url_2, $tsm_2, $data);
+        $count_r = $count - 1
+        echo "Bấm hoàn thành lần $count_r \r";
         if ($nhan_coin["success"]== 200 ){
             $type_2 = $nhan_coin["data"]["type"];
             $object_id = $nhan_coin["data"]["object_id"];
             $gio = date("H:i");
             $count -= 1000;
             $tt = $tt+1;
-            echo "".$do." | ".$BBlue.$tt.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do."|                     \n";}
+            echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do." | Error: ".$BBlue.$error_count.$do."\n";
         else{
             $count -= 1;
         }
     }
     if ($count == 0){
-        echo " NHẬN COIN THẤT BẠI \n";
+        echo " NHẬN COIN THẤT BẠI \r";
             $url_3 = "https://sv5.golike.net/api/advertising/publishers/tiktok/skip-jobs";
             $tsm_3 = array(
             "Host:sv5.golike.net",
@@ -185,7 +189,7 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
             $data_1 = '{"ads_id":'.$ads_id.',"object_id":"'.$object_id.'","account_id":'.$account_id.',"type":"'.$type.'"}';
             $skip = post_type2($url_3, $tsm_3, $data_1);
             $message = $skip["message"];
-            echo $van." $message \n";
+            echo $van." $message \r";
         }
 
 }
