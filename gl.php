@@ -41,6 +41,8 @@ echo $van." NHẬP AUTHORIZATION GOLIKE : ";
 $authorization = trim(fgets(STDIN));
 echo $van." NHẬP ACCOUNT_ID JOB TIKTOK : ";
 $account_id = trim(fgets(STDIN));
+echo $van." NHẬP SỐ LẦN HOÀN THÀNH : ";
+$count = trim(fgets(STDIN));
 echo $van." Nhập Delay : ";
 $dl = trim(fgets(STDIN));
 
@@ -94,7 +96,7 @@ if ($home_1["success"]== 200 ){
 	$link = $home_1["data"]["link"];
 	$type = $home_1["data"]["type"];
 	$object_id = $home_1["data"]["object_id"];
-	if ( $type == "follow"){
+	if ( $type == "follow" || $type == "like"){
 		echo $van." NHẬN NHIỆM VỤ THÀNH CÔNG : $type \r";
 		if (strtoupper(substr(PHP_OS, 0, 3)) === 'LIN') {
     	 	   @system('xdg-open '.$link);
@@ -154,7 +156,6 @@ if ($nhan_coin["success"]== 200 ){
 $tt = $tt+1;
 echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do." | ".$BBlue.$tt.$do."\n";
 }else{
-    $count = 2;
     while ($count > 0)
     {
         $nhan_coin = post_type2($url_2, $tsm_2, $data);
