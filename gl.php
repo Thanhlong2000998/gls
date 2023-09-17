@@ -45,7 +45,6 @@ echo $van." NHẬP SỐ LẦN HOÀN THÀNH : ";
 $ct = trim(fgets(STDIN));
 echo $van." Nhập Delay : ";
 $dl = trim(fgets(STDIN));
-$error_count = 0;
 
 $url = "https://sv5.golike.net/api/users/me";
 $tsm = array(
@@ -189,6 +188,7 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
             $data_1 = '{"ads_id":'.$ads_id.',"object_id":"'.$object_id.'","account_id":'.$account_id.',"type":"'.$type.'"}';
             $skip = post_type2($url_3, $tsm_3, $data_1);
             $message = $skip["message"];
+            $error_count = $error_count + 1
             echo $van." $message \r";
         }
 
