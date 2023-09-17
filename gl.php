@@ -124,10 +124,10 @@ if ($home_1["success"]== 200 ){
 }else{
 	$message = $home_1["message"];
 	if ( $message == "Bấm load jobs lại để lấy 100 jobs mới,cảm ơn bạn !"){
-	echo $van." TÌM NHIỆM VỤ THẤT BẠI : $message \r";
+	echo $van." TÌM NHIỆM VỤ THẤT BẠI : \r";
 	continue;
 	}else{
-		echo $van." TÌM NHIỆM VỤ THẤT BẠI : $message \r";
+		echo $van." TÌM NHIỆM VỤ THẤT BẠI: \r";
         continue;
 	}
 }
@@ -148,7 +148,7 @@ $tsm_2 = array(
 );
 $data = '{"ads_id":'.$ads_id.',"account_id":'.$account_id.',"async":true,"data":null}';
 $nhan_coin = post_type2($url_2, $tsm_2, $data);
-echo "Lần hoàn thành thứ $count \r";
+echo "Lần hoàn thành thứ $ct \r";
 if ($nhan_coin["success"]== 200 ){
 	$type_2 = $nhan_coin["data"]["type"];
 	$object_id = $nhan_coin["data"]["object_id"];
