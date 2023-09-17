@@ -160,7 +160,7 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
     while ($count > 0)
     {
         $nhan_coin = post_type2($url_2, $tsm_2, $data);
-        $count_r = $count - 1
+        $count_r = $count - 1;
         echo "Bấm hoàn thành lần $count_r \r";
         if ($nhan_coin["success"]== 200 ){
             $type_2 = $nhan_coin["data"]["type"];
