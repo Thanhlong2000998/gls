@@ -154,7 +154,7 @@ if ($nhan_coin["success"]== 200 ){
 	$object_id = $nhan_coin["data"]["object_id"];
 	$gio = date("H:i");
 $tt = $tt+1;
-echo "".$do." | ".$BBlue.$tt.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do."\n";
+echo "".$do." | ".$BBlue.$tt.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do."|                             \n";}
 }else{
     $count = intval($ct);
     while ($count > 0)
@@ -168,7 +168,7 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS 
             $gio = date("H:i");
             $count -= 1000;
             $tt = $tt+1;
-            echo "".$do." | ".$BBlue.$tt.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do."\n";}
+            echo "".$do." | ".$BBlue.$tt.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do."|                            \n";}
         else{
             $count -= 1;
         }
