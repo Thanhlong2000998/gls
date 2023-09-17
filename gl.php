@@ -42,7 +42,7 @@ $authorization = trim(fgets(STDIN));
 echo $van." NHẬP ACCOUNT_ID JOB TIKTOK : ";
 $account_id = trim(fgets(STDIN));
 echo $van." NHẬP SỐ LẦN HOÀN THÀNH : ";
-$count = trim(fgets(STDIN));
+$ct = trim(fgets(STDIN));
 echo $van." Nhập Delay : ";
 $dl = trim(fgets(STDIN));
 
@@ -156,6 +156,7 @@ if ($nhan_coin["success"]== 200 ){
 $tt = $tt+1;
 echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." | ".$vang.$object_id.$do." | ".$BBlue."SUCCESS ".$do." | ".$BBlue.$tt.$do."\n";
 }else{
+    $count = intval($ct);
     while ($count > 0)
     {
         $nhan_coin = post_type2($url_2, $tsm_2, $data);
