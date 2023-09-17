@@ -45,7 +45,7 @@ echo $van." NHẬP SỐ LẦN HOÀN THÀNH : ";
 $ct = trim(fgets(STDIN));
 echo $van." Nhập Delay : ";
 $dl = trim(fgets(STDIN));
-$error_count = 0
+$error_count = 0;
 
 $url = "https://sv5.golike.net/api/users/me";
 $tsm = array(
