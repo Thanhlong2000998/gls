@@ -148,7 +148,7 @@ $tsm_2 = array(
 );
 $data = '{"ads_id":'.$ads_id.',"account_id":'.$account_id.',"async":true,"data":null}';
 $nhan_coin = post_type2($url_2, $tsm_2, $data);
-echo "Lần hoàn thành thứ $ct                                                                                             \r";
+echo "Lần hoàn thành thứ $ct \r";
 if ($nhan_coin["success"]== 200 ){
 	$type_2 = $nhan_coin["data"]["type"];
 	$object_id = $nhan_coin["data"]["object_id"];
@@ -161,7 +161,7 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
     {
         $nhan_coin = post_type2($url_2, $tsm_2, $data);
         $count_r = $count - 1;
-        echo "Bấm hoàn thành lần $count_r                                                                                        \r";
+        echo "Bấm hoàn thành lần $count_r \r";
         if ($nhan_coin["success"]== 200 ){
             $type_2 = $nhan_coin["data"]["type"];
             $object_id = $nhan_coin["data"]["object_id"];
