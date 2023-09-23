@@ -127,7 +127,7 @@ if ($home_1["success"]== 200 ){
 	echo $van." TÌM NHIỆM VỤ THẤT BẠI : \r";
 	continue;
 	}else{
-		echo $van." TÌM NHIỆM VỤ THẤT BẠI:                          \r";
+		echo $van." TÌM NHIỆM VỤ THẤT BẠI: \r";
         continue;
 	}
 }
