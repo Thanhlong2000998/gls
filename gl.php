@@ -96,7 +96,7 @@ if ($home_1["success"]== 200 ){
 	$link = $home_1["data"]["link"];
 	$type = $home_1["data"]["type"];
 	$object_id = $home_1["data"]["object_id"];
-	if ( $type == "follow" || $type == "like"){
+	if ( $type == "follow"){
 		echo $van." NHẬN NHIỆM VỤ THÀNH CÔNG : $type \r";
 		if (strtoupper(substr(PHP_OS, 0, 3)) === 'LIN') {
     	 	   @system('xdg-open '.$link);
@@ -127,7 +127,7 @@ if ($home_1["success"]== 200 ){
 	echo $van." TÌM NHIỆM VỤ THẤT BẠI : \r";
 	continue;
 	}else{
-		echo $van." TÌM NHIỆM VỤ THẤT BẠI: \r";
+		echo $van." TÌM NHIỆM VỤ THẤT BẠI:                          \r";
         continue;
 	}
 }
@@ -148,7 +148,7 @@ $tsm_2 = array(
 );
 $data = '{"ads_id":'.$ads_id.',"account_id":'.$account_id.',"async":true,"data":null}';
 $nhan_coin = post_type2($url_2, $tsm_2, $data);
-echo "Lần hoàn thành thứ $ct \r";
+echo "Lần hoàn thành thứ $ct                                                                                             \r";
 if ($nhan_coin["success"]== 200 ){
 	$type_2 = $nhan_coin["data"]["type"];
 	$object_id = $nhan_coin["data"]["object_id"];
@@ -161,20 +161,20 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
     {
         $nhan_coin = post_type2($url_2, $tsm_2, $data);
         $count_r = $count - 1;
-        echo "Bấm hoàn thành lần $count_r \r";
+        echo "Bấm hoàn thành lần $count_r                                                                                        \r";
         if ($nhan_coin["success"]== 200 ){
             $type_2 = $nhan_coin["data"]["type"];
             $object_id = $nhan_coin["data"]["object_id"];
             $gio = date("H:i");
             $count -= 1000;
             $tt = $tt+1;
-            echo "".$do." | ".$BBlue.$tt.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do."|                            \n";}
+            echo "".$do." | ".$BBlue.$tt.$do." | ".$trang.$type_2.$do." | ".$BBlue."SUCCESS ".$do."|                                 \n";}
         else{
             $count -= 1;
         }
     }
     if ($count == 0){
-        echo " NHẬN COIN THẤT BẠI \r";
+        echo " NHẬN COIN THẤT BẠI                                                                                    \r";
             $url_3 = "https://sv5.golike.net/api/advertising/publishers/tiktok/skip-jobs";
             $tsm_3 = array(
             "Host:sv5.golike.net",
@@ -187,7 +187,7 @@ echo "".$do." | ".$BBlue.$tt.$do." | ".$luc.$gio.$do." | ".$trang.$type_2.$do." 
             $data_1 = '{"ads_id":'.$ads_id.',"object_id":"'.$object_id.'","account_id":'.$account_id.',"type":"'.$type.'"}';
             $skip = post_type2($url_3, $tsm_3, $data_1);
             $message = $skip["message"];
-            echo $van." $message \r";
+            echo $van." $message                    \r";
         }
 
 }
